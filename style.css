@@ -326,8 +326,7 @@
       background-color: #555;
       margin-left: 10px;
   }
-
-  .contact-left {
+ .contact-left {
     flex-basis: 35%;
     margin: 10px;
   }
