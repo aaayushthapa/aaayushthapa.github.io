@@ -272,23 +272,7 @@
   }
   
   /*----------contact---------*/
-  .contact-left {
-      display: table-cell;
-      width: 50%;
-      vertical-align: middle;
-      padding-right: 20px;
-  }
-
-  .contact-left h1,
-  .contact-left p {
-      margin-bottom: 10px;
-  }
-
-  .contact-left p i {
-      margin-right: 5px;
-  }
-
-  .contact-right {
+      .contact-right {
       display: table-cell;
       width: 50%;
       vertical-align: middle;
@@ -326,24 +310,26 @@
       background-color: #555;
       margin-left: 10px;
   }
- .contact-left {
-    flex-basis: 35%;
-    margin: 10px;
-  }
+  .contact-left {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.contact-left h1,
+.contact-left p {
+    margin-bottom: 10px;
+}
+
+.contact-left p i {
+    margin-right: 5px;
+}
   
   .contact-right {
     flex-basis: 60%;
   }
   
-  .contact-left p {
-    margin-top: 30px;
-  }
-  
-  .contact-left p i {
-    color: #ff004f;
-    margin-right: 15px;
-    font-size: 15px;
-  }
   
   .social-icons {
     margin-top: 30px;
