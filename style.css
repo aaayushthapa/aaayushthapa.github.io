@@ -273,6 +273,61 @@
   
   /*----------contact---------*/
   .contact-left {
+      display: table-cell;
+      width: 50%;
+      vertical-align: middle;
+      padding-right: 20px;
+  }
+
+  .contact-left h1,
+  .contact-left p {
+      margin-bottom: 10px;
+  }
+
+  .contact-left p i {
+      margin-right: 5px;
+  }
+
+  .contact-right {
+      display: table-cell;
+      width: 50%;
+      vertical-align: middle;
+      padding-left: 20px;
+  }
+
+  .contact-right form {
+      margin-top: 20px;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+  }
+
+  .contact-right textarea {
+      height: 120px;
+  }
+
+  .contact-right .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+  }
+
+  .contact-right .btn2 {
+      background-color: #555;
+      margin-left: 10px;
+  }
+
+  .contact-left {
     flex-basis: 35%;
     margin: 10px;
   }
