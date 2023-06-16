@@ -3,179 +3,123 @@
 <head>
   <title>Student Details</title>
   <style>
-    header {
-      padding: 20px;
-    }
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
     }
-    label {
-      font-weight: bold;
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
     }
-    input[type="text"] {
-      width: 200px;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-    #details {
-      margin-top: 20px;
-    }
-    
+
     h1 {
       text-align: center;
     }
-    
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
     button {
-      padding: 8px 12px;
+      display: block;
+      width: 100%;
+      padding: 10px;
       background-color: #4CAF50;
       color: white;
       border: none;
+      border-radius: 4px;
       cursor: pointer;
     }
-    
+
     button:hover {
       background-color: #45a049;
     }
-    
-    #details {
+
+    .details {
       border: 1px solid #ddd;
       padding: 10px;
     }
-    
-    #details h2 {
+
+    .details h2 {
       margin-top: 0;
+      text-align: center;
     }
-    
-    strong {
-      font-weight: bold;
-    }
-    
+
     .student-image {
       display: block;
       width: 150px;
       height: auto;
       margin: 10px auto;
+      border-radius: 50%;
     }
-    * {
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
+    .details p {
+      margin: 10px 0;
+    }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-}
+    .details strong {
+      font-weight: bold;
+    }
 
-h1 {
-  text-align: center;
-}
-
-form {
-  margin-bottom: 20px;
-}
-
-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-form input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-.details {
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-.details h2 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.student-image {
-  display: block;
-  width: 150px;
-  height: auto;
-  margin: 10px auto;
-  border-radius: 50%;
-}
-
-.details p {
-  margin: 10px 0;
-}
-
-.details strong {
-  font-weight: bold;
-}
-
-.error {
-  color: red;
-  font-weight: bold;
-  text-align: center;
-}
-
+    .error {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>Student Details</h1>
-  <label for="rollNo">Enter Roll No:</label>
-  <input type="text" id="rollNoInput">
-  <button onclick="showDetails()">Show Details</button>
+  <div class="container">
+    <h1>Student Details</h1>
+    <form>
+      <label for="rollNo">Enter Roll No:</label>
+      <input type="text" id="rollNoInput">
+      <button onclick="showDetails()">Show Details</button>
+    </form>
 
-  <div id="details">
-    <h2>Student Details</h2>
-    <img src="" alt="Student Image" class="student-image" id="studentImage">
-    <p><strong>Roll No:</strong> <span id="rollNo"></span></p>
-    <p><strong>Name:</strong> <span id="name"></span></p>
-    <p><strong>Age:</strong> <span id="age"></span></p>
-    <p><strong>Grade:</strong> <span id="grade"></span></p>
-    <p><strong>Address:</strong> <span id="address"></span></p>
+    <div class="details">
+      <h2>Student Details</h2>
+      <img src="" alt="Student Image" class="student-image" id="studentImage">
+      <p><strong>Roll No:</strong> <span id="rollNo"></span></p>
+      <p><strong>Name:</strong> <span id="name"></span></p>
+      <p><strong>Age:</strong> <span id="age"></span></p>
+      <p><strong>Grade:</strong> <span id="grade"></span></p>
+      <p><strong>Address:</strong> <span id="address"></span></p>
+    </div>
   </div>
 
   <script>
-    // Sample student data in JSON format
-var studentData = {
-  "1": {
-    "name": "Aashutosh Khatiwada",
-    "age": 20,
-    "grade": "A",
-    "address": "Gachiya",
-    "image": ""
-  },
-  "2": {
-    "name": "Aayush Thapa",
-    "age": 21,
-    "grade": "A",
-    "address": "Sundarharaicha-10,Biratchowk",
-    "image": "images/don.jpeg"
-  },
-  "3": {
+    var studentData = {
+      "1": {
+        "name": "Aashutosh Khatiwada",
+        "age": 20,
+        "grade": "A",
+        "address": "Gachiya",
+        "image": ""
+      },
+      "2": {
+        "name": "Aayush Thapa",
+        "age": 21,
+        "grade": "A",
+        "address": "Sundarharaicha-10, Biratchowk",
+        "image": "images/don.jpeg"
+      },
+      "3": {
     "name": "Abishek Khawas",
     "age": 20,
     "grade": "A",
@@ -330,40 +274,37 @@ var studentData = {
     "address": "Sankhasawa",
     "image": "sujan.jpg"
   },
-};
+    };
 
-function showDetails() {
-  var rollNoInput = document.getElementById("rollNoInput");
-  var rollNo = rollNoInput.value;
+    function showDetails() {
+      var rollNoInput = document.getElementById("rollNoInput");
+      var rollNo = rollNoInput.value;
 
-  // Retrieve student details from the JSON object based on the roll number
-  var student = studentData[rollNo];
+      var student = studentData[rollNo];
 
-  // Update the HTML elements with the student details
-  var rollNoElement = document.getElementById("rollNo");
-  var nameElement = document.getElementById("name");
-  var ageElement = document.getElementById("age");
-  var gradeElement = document.getElementById("grade");
-  var addressElement = document.getElementById("address");
-  var imageElement = document.getElementById("studentImage");
+      var rollNoElement = document.getElementById("rollNo");
+      var nameElement = document.getElementById("name");
+      var ageElement = document.getElementById("age");
+      var gradeElement = document.getElementById("grade");
+      var addressElement = document.getElementById("address");
+      var imageElement = document.getElementById("studentImage");
 
-  if (student) {
-    rollNoElement.textContent = rollNo;
-    nameElement.textContent = student.name;
-    ageElement.textContent = student.age;
-    gradeElement.textContent = student.grade;
-    addressElement.textContent = student.address;
-    imageElement.src = student.image;
-  } else {
-    rollNoElement.textContent = "";
-    nameElement.textContent = "";
-    ageElement.textContent = "";
-    addressElement.textContent = "";
-    gradeElement.textContent = "No details found for the given roll number.";
-    imageElement.src = "";
-  }
-}
-
+      if (student) {
+        rollNoElement.textContent = rollNo;
+        nameElement.textContent = student.name;
+        ageElement.textContent = student.age;
+        gradeElement.textContent = student.grade;
+        addressElement.textContent = student.address;
+        imageElement.src = student.image;
+      } else {
+        rollNoElement.textContent = "";
+        nameElement.textContent = "";
+        ageElement.textContent = "";
+        addressElement.textContent = "";
+        gradeElement.textContent = "No details found for the given roll number.";
+        imageElement.src = "";
+      }
+    }
   </script>
 </body>
 </html>
