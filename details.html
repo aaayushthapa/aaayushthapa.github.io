@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details</title>
+  <style>
+    header {
+      padding: 20px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    #details {
+      margin-top: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    button {
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #details {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    
+    #details h2 {
+      margin-top: 0;
+    }
+    
+    strong {
+      font-weight: bold;
+    }
+    
+    .student-image {
+      display: block;
+      width: 150px;
+      height: auto;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Student Details</h1>
+  <label for="rollNo">Enter Roll No:</label>
+  <input type="text" id="rollNoInput">
+  <button onclick="showDetails()">Show Details</button>
+
+  <div id="details">
+    <h2>Student Details</h2>
+    <img src="" alt="Student Image" class="student-image" id="studentImage">
+    <p><strong>Roll No:</strong> <span id="rollNo"></span></p>
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Age:</strong> <span id="age"></span></p>
+    <p><strong>Grade:</strong> <span id="grade"></span></p>
+    <p><strong>Address:</strong> <span id="address"></span></p>
+  </div>
+
+  <script>
+    // Sample student data in JSON format
+var studentData = {
+  "1": {
+    "name": "Aayush Thapa",
+    "age": 20,
+    "grade": "A",
+    "address": "Sunderharaicha-10, Biratchowk",
+    "image": "images/don.jpeg"
+  },
+  "2": {
+    "name": "Sujan Khadka",
+    "age": 17,
+    "grade": "B",
+    "address": "Sankhasawa",
+    "image": "sujan.jpg"
+  },
+  "3": {
+    "name": "Sudip Koyang",
+    "age": 24,
+    "grade": "C",
+    "address": "Bhojpur",
+    "image": "student3.jpg"
+  }
+};
+
+function showDetails() {
+  var rollNoInput = document.getElementById("rollNoInput");
+  var rollNo = rollNoInput.value;
+
+  // Retrieve student details from the JSON object based on the roll number
+  var student = studentData[rollNo];
+
+  // Update the HTML elements with the student details
+  var rollNoElement = document.getElementById("rollNo");
+  var nameElement = document.getElementById("name");
+  var ageElement = document.getElementById("age");
+  var gradeElement = document.getElementById("grade");
+  var addressElement = document.getElementById("address");
+  var imageElement = document.getElementById("studentImage");
+
+  if (student) {
+    rollNoElement.textContent = rollNo;
+    nameElement.textContent = student.name;
+    ageElement.textContent = student.age;
+    gradeElement.textContent = student.grade;
+    addressElement.textContent = student.address;
+    imageElement.src = student.image;
+  } else {
+    rollNoElement.textContent = "";
+    nameElement.textContent = "";
+    ageElement.textContent = "";
+    addressElement.textContent = "";
+    gradeElement.textContent = "No details found for the given roll number.";
+    imageElement.src = "";
+  }
+}
+
+  </script>
+</body>
+</html>
