@@ -9,19 +9,6 @@
 </head>
 <body>
   <div class="container">
-    <form id="loginForm" onsubmit="submitLoginForm(event)">
-        <h2>Login</h2>
-        <label for="loginUsername">Username:</label>
-        <input type="text" id="loginUsername" name="username" required>
-        
-        <label for="loginPassword">Password:</label>
-        <input type="password" id="loginPassword" name="password" required>
-        
-        <button type="submit">Login</button>
-    </form>
-  </div>
-  
-  <div class="container">
     <h2>Registration Form</h2>
     <form id="registrationForm" onsubmit="submitRegistrationForm(event)">
       <label for="regUsername">Username:</label>
@@ -40,17 +27,30 @@
     </form>
   </div>
 
+  <div class="container">
+    <form id="loginForm" onsubmit="submitLoginForm(event)">
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="username" required>
+        
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="password" required>
+        
+        <button type="submit">Login</button>
+    </form>
+  </div>
+  
+  
   <script>
+     function submitRegistrationForm(event) {
+      event.preventDefault(); 
+      // Handle registration form submission logic here
+      console.log("Registration form submitted");
+     }
     function submitLoginForm(event) {
       event.preventDefault(); 
       // Handle login form submission logic here
       console.log("Login form submitted");
-    }
-
-    function submitRegistrationForm(event) {
-      event.preventDefault(); 
-      // Handle registration form submission logic here
-      console.log("Registration form submitted");
       window.location.href = "https://aaayushthapa.github.io/";
     }
   </script>
