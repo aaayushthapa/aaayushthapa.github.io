@@ -9,8 +9,8 @@
 </head>
 <body>
   <div class="container">
-    <h2>Registration Form</h2>
     <form id="registrationForm" onsubmit="submitRegistrationForm(event)">
+      <h2>Registration Form</h2>
       <label for="regUsername">Username:</label>
       <input type="text" id="regUsername" name="username" required>
       
@@ -29,24 +29,24 @@
 
   <div class="container">
     <form id="loginForm" onsubmit="submitLoginForm(event)">
-        <h2>Login</h2>
-        <label for="loginUsername">Username:</label>
-        <input type="text" id="loginUsername" name="username" required>
-        
-        <label for="loginPassword">Password:</label>
-        <input type="password" id="loginPassword" name="password" required>
-        
-        <button type="submit">Login</button>
+      <h2>Login</h2>
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" name="username" required>
+      
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="password" required>
+      
+      <button type="submit">Login</button>
     </form>
   </div>
   
-  
   <script>
-     function submitRegistrationForm(event) {
+    function submitRegistrationForm(event) {
       event.preventDefault(); 
       // Handle registration form submission logic here
       console.log("Registration form submitted");
-     }
+    }
+    
     function submitLoginForm(event) {
       event.preventDefault(); 
       // Handle login form submission logic here
