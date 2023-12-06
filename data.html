@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="registrationContainer">
     <form id="registrationForm" onsubmit="submitRegistrationForm(event)">
       <h2>Registration Form</h2>
       <label for="regUsername">Username:</label>
@@ -27,7 +27,7 @@
     </form>
   </div>
 
-  <div class="container">
+  <div class="container" id="loginContainer" style="display: none;">
     <form id="loginForm" onsubmit="submitLoginForm(event)">
       <h2>Login</h2>
       <label for="loginUsername">Username:</label>
@@ -45,6 +45,12 @@
       event.preventDefault(); 
       // Handle registration form submission logic here
       console.log("Registration form submitted");
+      
+      // Hide registration form container
+      document.getElementById('registrationContainer').style.display = 'none';
+      
+      // Show login form container
+      document.getElementById('loginContainer').style.display = 'block';
     }
     
     function submitLoginForm(event) {
