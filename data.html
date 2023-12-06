@@ -4,34 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
+  <title>Registration and Login Form</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+    <form id="loginForm" onsubmit="submitLoginForm(event)">
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="username" required>
+        
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="password" required>
+        
+        <button type="submit">Login</button>
+    </form>
+  </div>
+  
+  <div class="container">
     <h2>Registration Form</h2>
-    <form id="registrationForm" onsubmit="submitForm(event)">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <form id="registrationForm" onsubmit="submitRegistrationForm(event)">
+      <label for="regUsername">Username:</label>
+      <input type="text" id="regUsername" name="username" required>
       
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <label for="regEmail">Email:</label>
+      <input type="email" id="regEmail" name="email" required>
       
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <label for="regPassword">Password:</label>
+      <input type="password" id="regPassword" name="password" required>
+
+      <label for="regConfirmPassword">Confirm Password:</label>
+      <input type="password" id="regConfirmPassword" name="confirm_password" required>
       
       <input type="submit" value="Register">
     </form>
   </div>
 
   <script>
-    function submitForm(event) {
-      event.preventDefault(); // Prevent form submission
+    function submitLoginForm(event) {
+      event.preventDefault(); 
+      // Handle login form submission logic here
+      console.log("Login form submitted");
+    }
 
-      // Perform your registration logic here
-      // ...
-
-      // Redirect to your website's home page
+    function submitRegistrationForm(event) {
+      event.preventDefault(); 
+      // Handle registration form submission logic here
+      console.log("Registration form submitted");
       window.location.href = "https://aaayushthapa.github.io/";
     }
   </script>
